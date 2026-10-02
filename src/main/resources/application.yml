@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:h2:mem:orders;DB_CLOSE_DELAY=-1}
+    username: ${DB_USER:sa}
+    password: ${DB_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: update   # demo only; use Flyway/Liquibase migrations in production
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
